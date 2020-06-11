@@ -4,6 +4,7 @@ import Header from "../components/Header.jsx";
 import Button from "../components/Button.jsx";
 import Card from "../components/Card.jsx";
 import Form from "../components/Form.jsx";
+import Footer from "../components/Footer.jsx";
 //Importando Archivos
 import "../assets/styles/pages/Home.scss";
 import Community from "../assets/images/community.png";
@@ -87,6 +88,8 @@ const Home = () => (
     {/* Cards */}
     {/* Form */}
     <Form />
+    {/* Form */}
+    <Footer />
   </div>
 );
 
