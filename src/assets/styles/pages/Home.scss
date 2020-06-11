@@ -1,0 +1,93 @@
+@import "../Vars.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.content_home {
+  margin: 0 vw(286, 1920);
+}
+
+.sectionImage {
+  width: 100%;
+  height: vw(765, 1920);
+  background: url("../../images/fondo.png");
+  background-size: cover;
+  .center {
+    @include flex($direction: column, $justify: center, $align: center);
+    margin: 0 vw(286, 1920);
+    margin-bottom: vw(60, 1920);
+    img {
+      width: vw(480, 1920);
+      margin-bottom: vw(50, 1920);
+    }
+    .titles {
+      font-family: $poppins-font;
+      margin-bottom: vw(30, 1920);
+      h1 {
+        margin-bottom: 0;
+      }
+    }
+    .buttons {
+      .button {
+        margin: 0 vw(14, 1920);
+      }
+    }
+  }
+  .columns {
+    margin: 0 vw(286, 1920);
+    @include flex($justify: center, $align: center);
+    .content {
+      width: 50%;
+      .info {
+        &.right {
+          padding-right: vw(100, 1920);
+        }
+        &.left {
+          padding-left: vw(150, 1920);
+        }
+        h1 {
+          font-family: $montserrat-font;
+          font-weight: 400;
+          font-size: vw(38, 1920);
+          width: vw(350, 1920);
+        }
+        p {
+          margin-top: vw(41, 1920);
+          font-family: $montserrat-font;
+          font-weight: 400;
+          font-size: vw(14, 1920);
+        }
+        .button {
+          margin-top: vw(100, 1920);
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.content_cards {
+  @include flex($direction: column, $justify: center, $align: center);
+  h1 {
+    text-align: center;
+    font-family: $montserrat-font;
+    font-weight: 600;
+    font-size: vw(43, 1920);
+    margin-bottom: vw(100, 1920);
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 33.333%);
+    grid-template-rows: repeat(2, 50%);
+  }
+}

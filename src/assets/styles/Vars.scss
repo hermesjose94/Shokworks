@@ -1,0 +1,45 @@
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap");
+
+$montserrat-font: "Montserrat", sans-serif;
+$poppins-font: "Poppins", sans-serif;
+
+//Colors
+$white: #fff;
+$green: #185f7f;
+$black: #555555;
+$pink: #c6baf8;
+$placeholder: #cccccc;
+$gray: #c2c2c2;
+
+$gradiant: transparent linear-gradient(248deg, #1b92c8 0%, #2c3636 100%) 0% 0%
+  no-repeat padding-box;
+
+@mixin flex(
+  $direction: null,
+  $align: null,
+  $justify: null,
+  $wrap: null,
+  $flow: null
+) {
+  display: flex;
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+  @if $flow {
+    flex-flow: $flow;
+  }
+}
+
+@function vw($pixels, $context: 16) {
+  @return ($pixels / $context) * 100vw;
+}

@@ -1,0 +1,43 @@
+@import "../Vars.scss";
+
+.container {
+  width: 100%;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+  input {
+    width: 100%;
+    height: vw(50, 1920);
+    background: transparent;
+    border: 1px solid $pink;
+    font-size: vw(14, 1920);
+    float: left;
+    color: $pink;
+    padding: vw(21, 1920) vw(15, 1920);
+    padding-right: vw(45, 1920);
+    border-radius: 4px;
+    &::placeholder {
+      font-size: vw(14, 1920);
+      font-family: $poppins-font;
+      color: $placeholder;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+    }
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+  .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 8px;
+    z-index: 1;
+    color: $pink;
+    transition: all 0.55s ease;
+  }
+}

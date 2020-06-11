@@ -1,0 +1,27 @@
+@import "../Vars.scss";
+
+.button {
+  cursor: pointer;
+  width: vw(169, 1920);
+  height: vw(58, 1920);
+  border: 1px solid $green;
+  border-radius: 5px;
+  text-align: center;
+  font-family: $poppins-font;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  font-size: vw(16, 1920);
+  background: transparent;
+  color: $green;
+  &.active,
+  &:hover {
+    background: $gradiant;
+    color: $white;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
