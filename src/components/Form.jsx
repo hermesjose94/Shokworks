@@ -28,7 +28,7 @@ const Form = () => (
       <div className="form_control">
         <label>Which Related Problem You Are Facing?</label>
         <select>
-          <option disabled selected>
+          <option disabled defaultValue>
             Select One
           </option>
           <option value="1">Option 1</option>

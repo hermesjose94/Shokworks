@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: $white;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 .home {
   max-width: 1920px;
   margin: 0 auto;
@@ -15,6 +21,19 @@
   margin: 0 vw(286, 1920);
 }
 
+.title_home {
+  width: 100%;
+  @include flex($justify: center, $align: center);
+  h1 {
+    text-align: center;
+    font-family: $montserrat-font;
+    font-weight: 400;
+    font-size: vw(43, 1920);
+    strong {
+      font-weight: 600;
+    }
+  }
+}
 .sectionImage {
   width: 100%;
   height: vw(765, 1920);

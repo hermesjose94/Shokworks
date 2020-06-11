@@ -1,0 +1,253 @@
+@import "../Vars.scss";
+
+//Variables para el carousel
+$level2-height: vw(380, 1920);
+$level2-width: vw(350, 1920);
+$level1-height: vw(432, 1920);
+$level1-width: vw(382, 1920);
+$level0-height: vw(200, 1920);
+$level0-width: vw(150, 1920);
+
+$level-2-left: calc(100% - 12vw);
+$level-1-left: calc(100% - 35vw);
+$level0-left: calc(100% - 59vw);
+$level1-left: calc(100% - 83vw);
+$level2-left: -6vw;
+
+.carouselContent {
+  position: relative;
+  height: vw(700, 1920);
+  margin-bottom: vw(200, 1920);
+}
+
+#carousel {
+  position: absolute;
+  height: vw(580, 1920);
+  width: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: $black;
+  line-height: 30px;
+  margin-top: 85px;
+  z-index: 1000;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding-top: vw(5, 1920);
+  box-shadow: 0px 10px 30px #99999933;
+
+  svg {
+    font-size: vw(24, 1920);
+  }
+}
+
+.arrow-right {
+  left: 50px;
+}
+
+.arrow-left {
+  right: 50px;
+}
+
+.item {
+  width: vw(422, 1920);
+  height: vw(532, 1920);
+  text-align: center;
+  background-color: $white;
+  color: $black;
+  font-size: 40px;
+  position: absolute;
+  box-shadow: 0px 10px 30px #99999933;
+  border-radius: 8px;
+  padding: 0 vw(51, 1920);
+  transition: height 1s, width 1s, left 1s, margin-top 1s, line-height 1s,
+    background-color 1s;
+
+  .content {
+    display: grid;
+    grid-template-rows: 60% 15% 25%;
+    height: 100%;
+    img {
+      // width: 100%;
+      width: vw(180, 1920);
+      border-radius: 50%;
+      height: vw(180, 1920);
+      margin: 0 auto;
+      margin-top: 25px;
+    }
+    h2 {
+      text-align: center;
+      font-family: $poppins-font;
+      font-weight: 400;
+      font-size: vw(22, 1920);
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    p {
+      text-align: center;
+      font-family: $poppins-font;
+      font-weight: 400;
+      font-size: vw(15, 1920);
+      color: #555555;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      height: 30px;
+    }
+  }
+}
+
+.level-2,
+.level2 {
+  img {
+    filter: blur(2px);
+  }
+}
+
+.level-2 {
+  height: $level2-height;
+  width: $level2-width;
+  // line-height: $level2-height;
+  //   background-color: #228291;
+  left: $level-2-left;
+  margin-top: 25px;
+}
+
+.level-1 {
+  height: $level1-height;
+  width: $level1-width;
+  // line-height: $level1-height;
+  //   background-color: #6796e5;
+  left: $level-1-left;
+  margin-top: 10px;
+}
+
+.level0 {
+  height: $level1-height;
+  width: $level1-width;
+  // line-height: $level1-height;
+  //   background-color: #4ec9e1;
+  left: $level0-left;
+  margin-top: 10px;
+}
+
+.level1 {
+  height: $level1-height;
+  width: $level1-width;
+  // line-height: $level1-height;
+  //   background-color: #6796e5;
+  margin-top: 10px;
+  left: $level1-left;
+}
+
+.level2 {
+  height: $level2-height;
+  width: $level2-width;
+  // line-height: $level2-height;
+  //   background-color: #228291;
+  margin-top: 25px;
+  left: $level2-left;
+}
+
+.left-enter {
+  opacity: 0;
+  left: $level2-left - $level2-width;
+  height: $level2-height - 30;
+  width: $level2-width - 20;
+  // line-height: $level2-height - 30;
+  margin-top: 40px;
+}
+
+.left-enter.left-enter-active {
+  opacity: 1;
+  left: $level2-left;
+  height: $level2-height;
+  width: $level2-width;
+  // line-height: $level2-height;
+  margin-top: 25px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.left-leave {
+  opacity: 1;
+  left: $level-2-left;
+  height: $level2-height;
+  width: $level2-width;
+  // line-height: $level2-height;
+  margin-top: 25px;
+}
+
+.left-leave.left-leave-active {
+  left: $level-2-left + $level2-width + 20;
+  opacity: 0;
+  height: $level2-height - 30;
+  // line-height: 120px;
+  margin-top: 40px;
+  width: $level2-width - 20;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.right-enter {
+  opacity: 0;
+  left: $level-2-left + $level2-width;
+  height: $level2-height - 30;
+  width: $level2-width - 20;
+  // line-height: $level2-height - 30;
+  margin-top: 40px;
+}
+
+.right-enter.right-enter-active {
+  left: $level-2-left;
+  opacity: 1;
+  height: $level2-height;
+  margin-top: 25px;
+  // line-height: $level2-height;
+  width: $level2-width;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.right-leave {
+  left: $level2-left;
+  height: $level2-height;
+  opacity: 1;
+  margin-top: 25px;
+  // line-height: $level2-height;
+  width: $level2-width;
+}
+
+.right-leave.right-leave-active {
+  left: $level2-left - $level2-width;
+  opacity: 0;
+  height: $level2-height - 30;
+  width: $level2-width - 20;
+  // line-height: $level2-height - 30;
+  margin-top: 40px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.noselect {
+  user-select: none;
+}
