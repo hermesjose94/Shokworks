@@ -26,3 +26,19 @@
     outline: none;
   }
 }
+
+@media (max-width: 700px) {
+  .button {
+    width: vw(209, 1920);
+    height: vw(98, 1920);
+    font-size: vw(20, 1920);
+  }
+}
+
+@media (max-width: 450px) {
+  .button {
+    width: vw(259, 1920);
+    height: vw(138, 1920);
+    font-size: vw(35, 1920);
+  }
+}

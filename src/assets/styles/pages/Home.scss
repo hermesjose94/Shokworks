@@ -111,3 +111,58 @@ body {
     grid-template-rows: repeat(2, 50%);
   }
 }
+
+@media (max-width: 700px) {
+  .sectionImage {
+    margin-top: vw(50, 1920);
+    height: vw(1065, 1920);
+    .center .titles {
+      font-size: vw(25, 1920);
+    }
+    .columns {
+      flex-direction: column;
+      .content {
+        .info {
+          text-align: center;
+          h1 {
+            width: 100%;
+          }
+          p {
+            font-size: vw(15, 1290);
+          }
+          &.right {
+            padding-right: 0;
+          }
+          &.left {
+            padding-left: 0;
+          }
+        }
+        img {
+          margin-top: vw(80, 1920);
+          width: 100%;
+          max-height: vw(400, 1920);
+        }
+      }
+    }
+  }
+  .title_home {
+    margin-top: vw(200, 1920);
+  }
+}
+
+@media (max-width: 400px) {
+  .sectionImage {
+    .columns {
+      .content {
+        .info {
+          h1 {
+            font-size: vw(60, 1920);
+          }
+          p {
+            font-size: vw(35, 1920);
+          }
+        }
+      }
+    }
+  }
+}

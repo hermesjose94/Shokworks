@@ -124,8 +124,6 @@ $level2-left: -6vw;
     .level-2 {
       height: $level2-height;
       width: $level2-width;
-      // line-height: $level2-height;
-      //   background-color: #228291;
       left: $level-2-left;
       margin-top: 25px;
     }
@@ -133,8 +131,6 @@ $level2-left: -6vw;
     .level-1 {
       height: $level1-height;
       width: $level1-width;
-      // line-height: $level1-height;
-      //   background-color: #6796e5;
       left: $level-1-left;
       margin-top: 10px;
     }
@@ -142,8 +138,6 @@ $level2-left: -6vw;
     .level0 {
       height: $level1-height;
       width: $level1-width;
-      // line-height: $level1-height;
-      //   background-color: #4ec9e1;
       left: $level0-left;
       margin-top: 10px;
     }
@@ -151,8 +145,6 @@ $level2-left: -6vw;
     .level1 {
       height: $level1-height;
       width: $level1-width;
-      // line-height: $level1-height;
-      //   background-color: #6796e5;
       margin-top: 10px;
       left: $level1-left;
     }
@@ -160,8 +152,6 @@ $level2-left: -6vw;
     .level2 {
       height: $level2-height;
       width: $level2-width;
-      // line-height: $level2-height;
-      //   background-color: #228291;
       margin-top: 25px;
       left: $level2-left;
     }
@@ -171,7 +161,6 @@ $level2-left: -6vw;
       left: $level2-left - $level2-width;
       height: $level2-height - 30;
       width: $level2-width - 20;
-      // line-height: $level2-height - 30;
       margin-top: 40px;
     }
 
@@ -180,7 +169,6 @@ $level2-left: -6vw;
       left: $level2-left;
       height: $level2-height;
       width: $level2-width;
-      // line-height: $level2-height;
       margin-top: 25px;
       transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
         line-height 1s;
@@ -191,7 +179,6 @@ $level2-left: -6vw;
       left: $level-2-left;
       height: $level2-height;
       width: $level2-width;
-      // line-height: $level2-height;
       margin-top: 25px;
     }
 
@@ -199,7 +186,6 @@ $level2-left: -6vw;
       left: $level-2-left + $level2-width + 20;
       opacity: 0;
       height: $level2-height - 30;
-      // line-height: 120px;
       margin-top: 40px;
       width: $level2-width - 20;
       transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
@@ -211,7 +197,6 @@ $level2-left: -6vw;
       left: $level-2-left + $level2-width;
       height: $level2-height - 30;
       width: $level2-width - 20;
-      // line-height: $level2-height - 30;
       margin-top: 40px;
     }
 
@@ -220,7 +205,6 @@ $level2-left: -6vw;
       opacity: 1;
       height: $level2-height;
       margin-top: 25px;
-      // line-height: $level2-height;
       width: $level2-width;
       transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
         line-height 1s;
@@ -231,7 +215,6 @@ $level2-left: -6vw;
       height: $level2-height;
       opacity: 1;
       margin-top: 25px;
-      // line-height: $level2-height;
       width: $level2-width;
     }
 
@@ -240,7 +223,6 @@ $level2-left: -6vw;
       opacity: 0;
       height: $level2-height - 30;
       width: $level2-width - 20;
-      // line-height: $level2-height - 30;
       margin-top: 40px;
       transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
         line-height 1s;
@@ -248,6 +230,57 @@ $level2-left: -6vw;
 
     .noselect {
       user-select: none;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .carouselContent {
+    height: vw(900, 1920);
+    #carousel {
+      height: vw(780, 1920);
+      .level0,
+      .level-1,
+      .level1 {
+        height: vw(532, 1920);
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .carouselContent {
+    height: vw(1200, 1920);
+    #carousel {
+      .item .content {
+        img {
+          height: 60%;
+          width: 40%;
+        }
+        h2 {
+          font-size: vw(35, 1920);
+        }
+        p {
+          font-size: vw(25, 1920);
+        }
+      }
+      height: vw(1000, 1920);
+      .level2,
+      .level-2,
+      .level-1,
+      .level1 {
+        display: none;
+      }
+      .level0 {
+        width: 50%;
+        height: vw(732, 1920);
+      }
+      .level0 {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 }

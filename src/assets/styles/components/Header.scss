@@ -48,3 +48,29 @@ header {
     width: vw(326, 1920);
   }
 }
+
+@media (max-width: 700px) {
+  header {
+    .logo {
+      width: 70%;
+      height: auto;
+    }
+    nav ul li {
+      font-size: vw(35, 1920);
+    }
+    .search {
+      display: none;
+    }
+    .contact {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    nav ul li {
+      font-size: vw(50, 1920);
+    }
+  }
+}

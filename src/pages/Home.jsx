@@ -30,6 +30,7 @@ const Home = () => {
     items: [],
     clients: [],
     photos: [],
+    messageForm: false,
     form: {
       name: "",
       lastname: "",
@@ -91,6 +92,52 @@ const Home = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const handleChange = (e) => {
+    setState({
+      ...state,
+      form: {
+        ...state.form,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const title = `${state.form.name} ${state.form.lastname}`;
+    const body = state.form.message;
+    let json = {
+      title: title,
+      body: body,
+      userId: 1,
+    };
+
+    // type, endoint, body
+    const [response, error] = await Fetch(
+      "POST",
+      `https://jsonplaceholder.typicode.com/posts`,
+      json
+    );
+    //Agrego la respuesta al array de clientes para verlo en su carousel
+    if (!error) {
+      const newclients = state.clients;
+      newclients.unshift(response);
+
+      setState({
+        ...state,
+        loading: false,
+        messageForm: true,
+        clients: newclients,
+      });
+    } else {
+      setState({
+        ...state,
+        loading: false,
+        error: error,
+      });
+    }
+  };
 
   if (state.error) {
     return <PageError title="500" error={state.error.message} />;
@@ -193,7 +240,11 @@ const Home = () => {
       )}
       {/* Clients */}
       {/* Form */}
-      <Form />
+      <Form
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        message={state.messageForm}
+      />
       {/* Form */}
       <Footer />
     </div>

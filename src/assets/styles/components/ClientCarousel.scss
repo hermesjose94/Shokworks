@@ -273,3 +273,12 @@ $level2-left: calc(100% - 92vw);
     }
   }
 }
+
+@media (max-width: 700px) {
+  .carouselClientContent {
+    height: vw(1000, 1920);
+    #carouselClient {
+      height: vw(1000, 1920);
+    }
+  }
+}

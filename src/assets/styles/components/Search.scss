@@ -32,12 +32,35 @@
   }
   .icon {
     position: absolute;
-    top: 50%;
     right: 0;
-    margin-right: 10px;
-    margin-top: 8px;
+    margin-right: vw(10, 1920);
+    margin-top: vw(13, 1920);
     z-index: 1;
     color: $pink;
     transition: all 0.55s ease;
+    svg {
+      font-size: vw(22, 1920);
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .container .icon {
+    margin-top: vw(6, 1920);
+  }
+}
+
+@media (max-width: 740px) {
+  header {
+    flex-direction: column;
+    .logo {
+      margin-bottom: vw(30, 1920);
+    }
+    .nav {
+      margin-bottom: vw(40, 1920);
+    }
+  }
+  .container .icon {
+    margin-top: vw(2, 1920);
   }
 }

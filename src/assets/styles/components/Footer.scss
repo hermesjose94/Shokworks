@@ -78,3 +78,38 @@ footer {
     margin-top: vw(-90, 1920);
   }
 }
+
+@media (max-width: 550px) {
+  footer {
+    .info {
+      .logo {
+        width: 60%;
+        height: auto;
+      }
+      .content {
+        h2 {
+          font-size: vw(30, 1920);
+        }
+        ul {
+          li {
+            font-size: vw(25, 1920);
+          }
+        }
+        p {
+          font-size: vw(25, 1920);
+        }
+        .content2 img {
+          width: vw(100, 1920);
+          height: vw(100, 1920);
+        }
+      }
+    }
+  }
+}
+
+// @media (max-width: 450px) {
+//   footer .info .col4 {
+//     flex-direction: column;
+//     width: 100%;
+//   }
+// }

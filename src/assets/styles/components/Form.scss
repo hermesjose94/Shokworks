@@ -2,7 +2,7 @@
 
 .contentForm {
   margin-top: vw(100, 1920);
-  height: vw(1086, 1920);
+  height: vw(1000, 1920);
   background: url("../../images/fondo.png"),
     url("../../images/Form1.png") right bottom/vw(566, 1920) vw(492, 1920)
       no-repeat,
@@ -66,6 +66,7 @@
         border-bottom: 1px solid $gray;
         color: $gray;
         background: transparent;
+        font-size: vw(20, 1920);
         padding-bottom: vw(23, 1920);
         &:hover,
         &:focus,
@@ -73,6 +74,7 @@
           outline: none;
         }
         &::placeholder {
+          font-size: vw(20, 1920);
           color: $placeholder;
         }
       }
@@ -87,6 +89,69 @@
       }
       &:hover .titleBtn {
         display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .contentForm {
+    height: vw(1384, 1920);
+    .cardForm {
+      width: 100%;
+      height: vw(984, 1920);
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .contentForm {
+    height: vw(1500, 1920);
+    .cardForm {
+      height: vw(1100, 1920);
+      .col2 {
+        flex-direction: column;
+        .form_control {
+          width: 100%;
+        }
+      }
+      .form_control {
+        label {
+          font-size: vw(26, 1920);
+        }
+        input,
+        select,
+        textarea {
+          font-size: vw(26, 1920);
+          &::placeholder {
+            font-size: vw(26, 1920);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .contentForm {
+    height: vw(1900, 1920);
+    .cardForm {
+      height: vw(1400, 1920);
+      .form_control {
+        label {
+          font-size: vw(40, 1920);
+        }
+        input,
+        select,
+        textarea {
+          font-size: vw(40, 1920);
+          &::placeholder {
+            font-size: vw(40, 1920);
+          }
+        }
+      }
+      .button {
+        margin-top: vw(80, 1920);
       }
     }
   }
