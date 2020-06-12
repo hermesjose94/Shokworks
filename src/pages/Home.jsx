@@ -9,7 +9,8 @@ import Form from "../components/Form.jsx";
 import Carousel from "../components/Carousel.jsx";
 import ClientCarousel from "../components/ClientCarousel.jsx";
 import Footer from "../components/Footer.jsx";
-import Loading from "../components/Loading.jsx";
+import Loading from "./Loading.jsx";
+import PageError from "./Error.jsx";
 //Importando Archivos
 import "../assets/styles/pages/Home.scss";
 import Community from "../assets/images/community.png";
@@ -61,9 +62,6 @@ const Home = () => {
       "https://jsonplaceholder.typicode.com/photos",
       null
     );
-    console.log("1=>", response);
-    console.log("2=>", response2);
-    console.log("3=>", response);
     //Validacion de que llegara la data de ambos endpoint
     if (!error || !error2 || !error3) {
       if (response && response2 && response3) {
@@ -93,6 +91,10 @@ const Home = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  if (state.error) {
+    return <PageError title="500" error={state.error.message} />;
+  }
 
   if (state.loading) {
     return <Loading />;

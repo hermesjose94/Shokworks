@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../assets/styles/components/Loading.scss";
+import "../assets/styles/pages/Loading.scss";
 
 const Loading = () => (
   <div className="contentLoader">
