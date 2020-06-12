@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Item from "./ItemCarousel.jsx";
-import "../assets/styles/components/Carousel.scss";
+import Client from "./Client.jsx";
+import "../assets/styles/components/ClientCarousel.scss";
 
-const Carousel = ({ items, active }) => {
+const ClientCarousel = ({ items, active, photos }) => {
   const [state, setState] = useState({
     items: items,
+    photos: photos,
     active: active,
     direction: "",
   });
@@ -14,6 +15,7 @@ const Carousel = ({ items, active }) => {
   const generateItems = () => {
     var items = [];
     var level;
+    var img = 1;
     for (let i = state.active - 2; i < state.active + 3; i++) {
       var index = i;
       if (i < 0) {
@@ -22,8 +24,14 @@ const Carousel = ({ items, active }) => {
         index = i % state.items.length;
       }
       level = state.active - i;
-
-      items.push(<Item key={index} item={state.items[index]} level={level} />);
+      items.push(
+        <Client
+          key={index}
+          item={state.items[index]}
+          level={level}
+          imgage={state.photos[index]}
+        />
+      );
     }
     return items;
   };
@@ -49,15 +57,15 @@ const Carousel = ({ items, active }) => {
   };
 
   return (
-    <div className="carouselContent">
-      <div id="carousel" className="noselect">
-        <div className="arrow arrow-left" onClick={moveLeft}>
+    <div className="carouselClientContent">
+      <div id="carouselClient" className="noselect">
+        <div className="arrow arrow-left" onClick={moveRight}>
           <FontAwesomeIcon icon={["fas", "arrow-left"]} />
         </div>
         <ReactCSSTransitionGroup transitionName={state.direction}>
           {generateItems()}
         </ReactCSSTransitionGroup>
-        <div className="arrow arrow-right" onClick={moveRight}>
+        <div className="arrow arrow-right" onClick={moveLeft}>
           <FontAwesomeIcon icon={["fas", "arrow-right"]} />
         </div>
       </div>
@@ -65,4 +73,4 @@ const Carousel = ({ items, active }) => {
   );
 };
 
-export default Carousel;
+export default ClientCarousel;

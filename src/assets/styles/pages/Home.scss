@@ -97,6 +97,7 @@ body {
 
 .content_cards {
   @include flex($direction: column, $justify: center, $align: center);
+  margin-bottom: vw(150, 1920);
   h1 {
     text-align: center;
     font-family: $montserrat-font;
